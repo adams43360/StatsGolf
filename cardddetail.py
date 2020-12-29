@@ -24,14 +24,14 @@ class cardDetail(QDialog):
         # If isset v
         if self.v != "":
             self.btn_add = QPushButton('Ajouter')
-            self.btn_add.clicked.connect(self.connectBdd)
+            self.btn_add.clicked.connect(self.newBdd)
 
             # Add widgets
             self.layout.addWidget(self.lbl_title, 1, 0, 1, 1)
             self.layout.addWidget(self.btn_add, 3, 3, 1, 1)
         else:
             self.btn_add = QPushButton('Modifier')
-            self.btn_add.clicked.connect(self.connectBdd)
+            self.btn_add.clicked.connect(self.existingBdd)
 
             # Add widgets
             self.layout.addWidget(self.lbl_title, 1, 0, 1, 1)
@@ -41,6 +41,8 @@ class cardDetail(QDialog):
         self.setLayout(self.layout)
 
     def newBdd(self):
+        print("New Scorecard")
+        '''
         try:
             conn = sqlite3.connect('golfstats.db')
             cur = conn.cursor()
@@ -54,8 +56,10 @@ class cardDetail(QDialog):
             conn.close()
         except sqlite3.Error as error:
             print("Erreur lors de la connexion à SQLite", error)
-
+        '''
     def existingBdd(self):
+        print("Existing scoreCard")
+        '''
         try:
             conn = sqlite3.connect('golfstats.db')
             cur = conn.cursor()
@@ -70,6 +74,7 @@ class cardDetail(QDialog):
             conn.close()
         except sqlite3.Error as error:
             print("Erreur lors de la connexion à SQLite", error)
+        '''
 
 if __name__ == '__main__':
     # Create the Qt Application
