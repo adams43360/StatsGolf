@@ -2,6 +2,7 @@ import sys
 from PySide6.QtWidgets import *
 import sqlite3
 import cardddetail
+import cardnew
 
 class ScoreCard(QDialog):
     def __init__(self, parent=None):
@@ -20,7 +21,7 @@ class ScoreCard(QDialog):
         # Form structuration
         self.lbl_title = QLabel('Mes cartes de score')
         self.btn_add = QPushButton('+')
-        self.btn_add.clicked.connect(self.connectBdd)
+        self.btn_add.clicked.connect(self.addClick)
 
         # Table BDD integration
         self.tab_result = QTableWidget(self)
@@ -40,6 +41,11 @@ class ScoreCard(QDialog):
 
     def printClick(self, value):
         dialog = cardddetail.cardDetail(value=self.tab_result.item(value, 0).text())
+        dialog.show()
+        dialog.exec_()
+
+    def addClick(self, value):
+        dialog = cardnew.cardDetail()
         dialog.show()
         dialog.exec_()
 

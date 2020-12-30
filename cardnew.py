@@ -4,22 +4,21 @@ import sqlite3
 
 
 class cardDetail(QDialog):
-    def __init__(self, value="", parent=None):
-        self.v = value
+    def __init__(self, parent=None):
         super(cardDetail, self).__init__(parent)
 
         # Resize the page
         self.resize(600, 800)
         self.setWindowTitle("Ma carte de score")
 
-        self.setupUi(self.v)
+        self.setupUi(self)
 
-    def setupUi(self, v):
+    def setupUi(self):
         # Create layout
         self.layout = QGridLayout()
 
         # Form structuration
-        self.lbl_title = QLabel("Value = " + str(self.v))
+        self.lbl_title = QLabel("Carte neuve")
 
         self.btn_add = QPushButton('Ajouter')
         self.btn_add.clicked.connect(self.newBdd)
@@ -31,16 +30,15 @@ class cardDetail(QDialog):
 
         self.setLayout(self.layout)
 
-    def existingBdd(self):
-        print("Existing scoreCard")
+    def newBdd(self):
+        print("New Scorecard")
         '''
         try:
             conn = sqlite3.connect('golfstats.db')
             cur = conn.cursor()
-            sql = "SELECT scorecards.*, resultat.*, courses.* " \
-                  "FROM scorecards, courses, results " \
-                  "WHERE scorecards.idscorecards = result.idscorecards AND " \
-                  "scorecards.idcourses = courses.idcourses;"
+            sql = "SELECT * " \
+                  "FROM courses " \
+                  "WHERE courses.idcourses = 1;"
 
             res = cur.execute(sql)
 
