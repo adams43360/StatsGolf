@@ -7,7 +7,7 @@ Cette outil sera fait principalement de deux grosses fonctions pour le moment : 
 
 Ce que je ne veux pas faire : Gérer les distances par clubs joués Avoir son score par rapport à son index (je souhaite une base fixe et non évolutive avec l'évolution de son index) Un outil complexe à utiliser
 
-L'outil sera également disponible en version Microsoft et Apple (et pourquoi pas Linux). Le développement sera fait en Python avec Pyside6 (je verrai à l'usage si je modifie pour le passer en PyQt6 et Qt Designer).
+L'outil sera également disponible en version Microsoft et Apple (et pourquoi pas Linux). Le développement sera fait en Python avec PyQt5.
 
 Mon objectif perso, me former sur Python et pousser sur un cas qui pourra être utilisé par un maximum de personnes mes connaissances dans ce langage mais également dans la gestion de data et de statistiques.
 
