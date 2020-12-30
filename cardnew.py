@@ -1,5 +1,5 @@
 import sys
-from PySide6.QtWidgets import *
+from PyQt5.QtWidgets import (QPushButton, QGridLayout, QDialog, QLabel)
 import sqlite3
 
 
@@ -11,7 +11,7 @@ class cardDetail(QDialog):
         self.resize(600, 800)
         self.setWindowTitle("Ma carte de score")
 
-        self.setupUi(self)
+        self.setupUi()
 
     def setupUi(self):
         # Create layout

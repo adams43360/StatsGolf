@@ -1,5 +1,5 @@
 import sys
-from PySide6.QtWidgets import *
+from PyQt5.QtWidgets import (QApplication, QPushButton, QGridLayout, QDialog, QLabel, QTableWidget, QTableWidgetItem)
 import sqlite3
 import cardddetail
 import cardnew

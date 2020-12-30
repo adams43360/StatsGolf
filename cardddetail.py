@@ -1,5 +1,5 @@
 import sys
-from PySide6.QtWidgets import *
+from PyQt5.QtWidgets import (QPushButton, QGridLayout, QDialog, QLabel)
 import sqlite3
 
 
@@ -22,7 +22,7 @@ class cardDetail(QDialog):
         self.lbl_title = QLabel("Value = " + str(self.v))
 
         self.btn_add = QPushButton('Ajouter')
-        self.btn_add.clicked.connect(self.newBdd)
+        self.btn_add.clicked.connect(self.existingBdd)
 
         # Add widgets
         self.layout.addWidget(self.lbl_title, 1, 0, 1, 1)
