@@ -21,7 +21,7 @@ class ScoreCard(QDialog):
         # Form structuration
         self.lbl_title = QLabel('Mes cartes de score')
         self.btn_add = QPushButton('+')
-        self.btn_add.clicked.connect(self.addClick)
+        self.btn_add.clicked.connect(self.addNewCard)
 
         # Table BDD integration
         self.tab_result = QTableWidget(self)
@@ -44,7 +44,7 @@ class ScoreCard(QDialog):
         dialog.show()
         dialog.exec_()
 
-    def addClick(self, value):
+    def addNewCard(self, value):
         dialog = cardnew.cardDetail()
         dialog.show()
         dialog.exec_()
